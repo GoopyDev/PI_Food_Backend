@@ -26,7 +26,7 @@ router.get("/recipes/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const { source } = req.query;
-    console.log(`Buscando por ID ${id}`);
+    // console.log(`Buscando por ID ${id}`);
     let recipe = await getRecipeById(id, source);
     res.status(200).json(recipe);
   } catch (error) {

@@ -1,7 +1,6 @@
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
-const { Recipe } = require("./src/db.js");
-const { demoRecipes } = require("./src/SampleData.js");
+const { SampleDataCreate } = require("./src/SampleDataCreate.js");
 
 // Syncing all the models at once.
 conn
@@ -15,8 +14,7 @@ conn
   .then(async () => {
     console.log("Intento crear datos de ejemplo");
     try {
-      // Creamos algunas recetas de ejemplo en la DB
-      await Recipe.bulkCreate(demoRecipes);
+      SampleDataCreate(conn);
       console.log("Datos creados correctamente");
     } catch (error) {
       console.error(error);

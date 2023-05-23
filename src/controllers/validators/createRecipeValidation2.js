@@ -18,14 +18,20 @@ const validateRecipeTwo = async (req, res, next) => {
   });
 
   if (nameFound) {
+    console.log("║    [       FAILED        ]    ║");
+    console.log("╚═══════════════════════════════╝");
     return res.status(409).json({ error: "Error en la validación #2, ya existe una receta con ese nombre" }); // prettier-ignore
   }
   if (descriptionFound) {
+    console.log("║    [       FAILED        ]    ║");
+    console.log("╚═══════════════════════════════╝");
     return res.status(409).json({ error: "Error en la validación #2, ya existe una receta con esa descripción" }); // prettier-ignore
   }
   console.log("║    [         OK          ]    ║");
   console.log("╚═══════════════════════════════╝");
 
+  console.log("Validé esto:");
+  console.log(req.body.recipe);
   next();
 };
 

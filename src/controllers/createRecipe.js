@@ -13,7 +13,7 @@ const createRecipe = async (recipeData) => {
   };
 
   return Recipe.create(newRecipe).then((newRecipe) => {
-    console.log("Receta creada con éxito");
+    // console.log("Receta creada con éxito");
     return newRecipe.toJSON();
   });
 };

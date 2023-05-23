@@ -28,7 +28,12 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     steps: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.ARRAY(
+        DataTypes.JSONB({
+          number: DataTypes.INTEGER,
+          step: DataTypes.STRING,
+        })
+      ),
       allowNull: false,
     },
   });

@@ -1,3 +1,5 @@
+const demoDiet = { name: "SampleDiet" };
+
 const demoRecipes = [
   // id name image description health_score steps
   {
@@ -6,7 +8,11 @@ const demoRecipes = [
       "https://www.madeleinecocina.com/wp-content/uploads/2015/07/cumpanioDSC_3222.jpg",
     description: "Receta de cebolla con morrones",
     health_score: 3.5,
-    steps: ["Cortar cebollas", "Saltear cebollas", "Añadir morron"],
+    steps: [
+      { number: 1, step: "Cortar cebollas" },
+      { number: 2, step: "Saltear cebollas" },
+      { number: 3, step: "Añadir morron" },
+    ],
   },
   {
     name: "Feijoada",
@@ -15,10 +21,10 @@ const demoRecipes = [
     description: "Receta de feijoada",
     health_score: 3.5,
     steps: [
-      "Conseguir muchos frijoles",
-      "Hervir todo junto",
-      "Añadir sal",
-      "Comer",
+      { number: 1, step: "Conseguir muchos frijoles" },
+      { number: 2, step: "Hervir todo junto" },
+      { number: 3, step: "Añadir sal" },
+      { number: 4, step: "Comer" },
     ],
   },
   {
@@ -28,10 +34,10 @@ const demoRecipes = [
     description: "Receta de Guiso de papas, longaniza y nopales",
     health_score: 3.5,
     steps: [
-      "Cortar papas, longaniza",
-      "Saltear nopales",
-      "Hervir papas",
-      "Incorporar los nopales y la longaniza",
+      { number: 1, step: "Cortar papas, longaniza" },
+      { number: 2, step: "Saltear nopales" },
+      { number: 3, step: "Hervir papas" },
+      { number: 4, step: "Incorporar los nopales y la longaniza" },
     ],
   },
   {
@@ -41,16 +47,16 @@ const demoRecipes = [
     description: "Receta de Cortadillo",
     health_score: 3.5,
     steps: [
-      "Cortar carne",
-      "Saltear cebollas",
-      "Añadir la carne a las cebollas",
-      "Hervir zanahoria",
-      "Servir en masa de taco",
+      { number: 1, step: "Cortar carne" },
+      { number: 2, step: "Saltear cebollas" },
+      { number: 3, step: "Añadir la carne a las cebollas" },
+      { number: 4, step: "Hervir zanahoria" },
+      { number: 5, step: "Servir en masa de taco" },
     ],
   },
-  // Agrega más datos aquí
 ];
 
 module.exports = {
+  demoDiet,
   demoRecipes,
 };

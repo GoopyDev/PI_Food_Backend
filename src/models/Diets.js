@@ -13,6 +13,11 @@ module.exports = (sequelize) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "El valor no puede ser una cadena vacía.",
+        },
+      },
     },
   });
 };
