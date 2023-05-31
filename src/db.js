@@ -44,6 +44,24 @@ const { Recipe, Diet } = sequelize.models;
 Recipe.belongsToMany(Diet, { through: "RecipeDiet" });
 Diet.belongsToMany(Recipe, { through: "RecipeDiet" });
 
+// Recipe.associate = () => {
+//   Recipe.belongsToMany(Diet, {
+//     through: "RecipeDiet", // Nombre de la tabla intermedia que almacenará las relaciones
+//     foreignKey: "recipeId", // Nombre de la clave foránea en la tabla intermedia que hace referencia a Recipe
+//     otherKey: "dietId", // Nombre de la clave foránea en la tabla intermedia que hace referencia a Diet
+//     as: "diets", // Alias para acceder a las relaciones
+//   });
+// };
+
+// Diet.associate = () => {
+//   Diet.belongsToMany(Recipe, {
+//     through: "RecipeDiet", // Nombre de la tabla intermedia que almacenará las relaciones
+//     foreignKey: "dietId", // Nombre de la clave foránea en la tabla intermedia que hace referencia a Diet
+//     otherKey: "recipeId", // Nombre de la clave foránea en la tabla intermedia que hace referencia a Recipe
+//     as: "recipes", // Alias para acceder a las relaciones
+//   });
+// };
+
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   conn: sequelize, // para importart la conexión { conn } = require('./db.js');

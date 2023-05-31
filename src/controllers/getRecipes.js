@@ -12,14 +12,17 @@ const getRecipes = async (source = "api") => {
     // Obtenemos las recetas de la API Spoonacular
 
     // Para obtener recetas aleatorias (hay más de 5000), generamos un nro random
-    // que obtendrá 10 recetas entre las existentes
+    // que obtendrá 100 recetas entre las existentes
     const randomOffset = 10 * Math.floor(Math.random() * 91);
     // console.log(randomOffset);
+
+    // Cantidad de resultados que queremos obtener:
+    const number = 5;
 
     // console.log(`Realizando petición de RECIPES a https://api.spoonacular.com/recipes/complexSearch?offset=${randomOffset}&addRecipeInformation=true&apiKey=`); // prettier-ignore
     // prettier-ignore
     recipes = await axios
-      .get(`https://api.spoonacular.com/recipes/complexSearch?offset=${randomOffset}&addRecipeInformation=true&apiKey=${KEY}`)
+      .get(`https://api.spoonacular.com/recipes/complexSearch?offset=${randomOffset}&number=${number}&addRecipeInformation=true&apiKey=${KEY}`)
       .then((response) => [...response.data.results]);
   } else if (source == "database") {
     // Obtenemos las recetas de la Base local

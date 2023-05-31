@@ -12,7 +12,7 @@ const SampleDataCreate = async (conn) => {
     // Crear las recetas de ejemplo y asociarlas con la dieta
     for (const recipeData of demoRecipes) {
       const recipe = await Recipe.create(recipeData, { transaction: t });
-      await recipe.setDiets([dieta], { transaction: t });
+      await recipe.addDiets([dieta], { transaction: t });
     }
 
     // Confirmar la transacción
